@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --aw-color-primary: #63f17b;
+  --aw-color-secondary: #ec4899;
+  --aw-color-accent: #f97316;
+  --aw-color-text-page: #111827;
+  --aw-color-text-muted: #6b7280;
+  --aw-color-bg-page: #ffffff;
+}
+
+.dark {
+  --aw-color-primary: #00ff2a;       /* Verde Molly */
+  --aw-color-secondary: #41cc00;
+  --aw-color-accent: #00ff99;
+  --aw-color-text-page: #ffffff;
+  --aw-color-text-muted: #aaaaaa;
+  --aw-color-bg-page: #0a0a0a;       /* Fondo negro */
+  --aw-color-bg-page-dark: #0a0a0a;
+}
+
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
