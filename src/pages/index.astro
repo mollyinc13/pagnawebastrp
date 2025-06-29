@@ -54,25 +54,38 @@ const metadata = {
   <div id="vanta-bg" class="absolute inset-0 z-[-1] h-full w-full"></div>
 
 <script type="module" is:client>
-  import * as THREE from 'three';
-  import BIRDS from 'vanta/dist/vanta.birds.min';
+  // No importar THREE y BIRDS aquí arriba directamente
 
   let vantaEffect;
 
+  // Asegurarse de que este script solo se ejecute en el cliente
   if (typeof window !== 'undefined') {
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => { // Hacemos el callback async
       if (!vantaEffect) {
-        vantaEffect = BIRDS({
-          el: '#vanta-bg',
-          THREE: THREE,
-          backgroundColor: 0x000000,
-          color1: 0x00ff99,
-          color2: 0x00cc7a,
-          quantity: 3.0,
-          speedLimit: 2.0,
-          cohesion: 5.0,
-          backgroundAlpha: 1.0
-        });
+        // Importar dinámicamente solo en el cliente
+        const THREE = await import('three');
+        const { default: BIRDS } = await import('vanta/dist/vanta.birds.min.js');
+
+        // Pequeña demora para asegurar que el DOM esté completamente listo y visible
+        // A veces, especialmente con scripts que manipulan el canvas, esto ayuda.
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        const el = document.getElementById('vanta-bg');
+        if (el) { // Verificar que el elemento existe
+          vantaEffect = BIRDS({
+            el: el, // Pasar el elemento directamente
+            THREE: THREE, // Pasar el módulo THREE completo
+            backgroundColor: 0x000000,
+            color1: 0x00ff99,
+            color2: 0x00cc7a,
+            quantity: 3.0,
+            speedLimit: 2.0,
+            cohesion: 5.0,
+            backgroundAlpha: 1.0
+          });
+        } else {
+          console.error('Elemento #vanta-bg no encontrado para VantaJS');
+        }
       }
     });
   }
