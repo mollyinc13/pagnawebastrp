@@ -52,7 +52,7 @@ const codeLines = [
   { text: <><span style={commentStyle}>// Iniciando el ecosistema digital de Molly Inc.</span></> },
   { text: <><span style={keywordStyle}>import</span> 'package:molly_framework/molly_framework.dart'<span style={keywordStyle}> as </span>molly;</> },
   { text: '' },
-  { text: <><span style={keywordStyle}>void</span> <span style={functionStyle}>main</span>() {</> },
+  { text: <><span style={keywordStyle}>void</span> <span style={functionStyle}>main</span>() {'{'}</> },
   { text: <>&nbsp;&nbsp;<span style={classStyle}>MollyApp</span> <span style={propertyStyle}>app</span> = molly.<span style={functionStyle}>bootstrap</span>(</> },
   { text: <>&nbsp;&nbsp;&nbsp;&nbsp;name: <span style={stringStyle}>'Molly Inc. Soluciones Digitales'</span>,</> },
   { text: <>&nbsp;&nbsp;&nbsp;&nbsp;version: <span style={stringStyle}>'2.0.0'</span>,</> },
@@ -66,7 +66,7 @@ const codeLines = [
   { text: '' },
   { text: <>&nbsp;&nbsp;app.<span style={functionStyle}>run</span>();</> },
   { text: <>&nbsp;&nbsp;<span style={commentStyle}>// Potenciando negocios con soluciones modulares...</span></> },
-  { text: <>}</> },
+  { text: <>{'}'}</> },
 ];
 
 export default function VantaLoader() {
