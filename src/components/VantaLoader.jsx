@@ -13,7 +13,7 @@ export default function VantaLoader() {
       if (vantaRef.current) {
         vantaEffect.current = BIRDS({
           el: vantaRef.current,
-          THREE, // Aquí podríamos tener el problema de compatibilidad de versiones
+          // THREE, // Quitamos la versión moderna de THREE para que Vanta use la suya o una compatible.
           backgroundColor: 0x000000,
           color1: 0x00ff99,
           color2: 0x00cc7a,
