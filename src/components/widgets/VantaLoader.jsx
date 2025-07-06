@@ -9,7 +9,7 @@ const commonStyles = {
     left: 0,
     width: '100%',
     height: '100%',
-    zIndex: -1,
+    zIndex: 1, // Cambiado de -1 a 1
     fontFamily: '"Fira Code", "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace',
     fontSize: '16px',
     lineHeight: '1.7',

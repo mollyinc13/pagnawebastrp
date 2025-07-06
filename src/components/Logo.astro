@@ -2,8 +2,13 @@
 import { SITE } from 'astrowind:config';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
+<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 flex items-center space-x-2">
+  <img
+    src="/images/logo.png"
+    alt="Logo Molly Inc."
+    class="h-8 w-auto invert dark:invert-0 transition duration-300"
+  />
+  <span class="text-2xl md:text-xl font-bold text-gray-900 dark:text-white whitespace-nowrap">
+    Molly <span class="text-orange-500 dark:text-green-400">Inc.</span>
+  </span>
 </span>
